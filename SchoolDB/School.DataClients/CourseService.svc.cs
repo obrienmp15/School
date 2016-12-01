@@ -16,13 +16,18 @@ namespace School.DataClients
     
     private EfData ef = new EfData();
 
+    public void DoWork()
+    {
+      throw new NotImplementedException();
+    }
+
     public List<CourseDAO> GetCourses()
     {
       var g = new List<CourseDAO>();
 
       foreach (var course in ef.GetCourses())
       {
-        g.Add(CourseMapper.MapToCourseDAO(course));
+        g.Add(CourseAutoMapper.MapToCourseDAO(course));
       }
 
       return g;
